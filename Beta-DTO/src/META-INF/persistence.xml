@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+  <persistence-unit name="BETAAPPS" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>java:PGBETAAPPSDS</jta-data-source>
+    <class>com.betaapps.dto.AdminChannel</class>
+    <class>com.betaapps.dto.TransactionLog</class>
+    <class>com.betaapps.dto.UserGroup</class>
+    <class>com.betaapps.dto.Transactions</class>
+    <class>com.betaapps.dto.Merchant</class>
+    <properties>
+      <!--<property name="hibernate.show_sql" value="true" />-->
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+      <!--<property name="hibernate.query.factory_class" value="org.hibernate.hql.classic.ClassicQueryTranslatorFactory" />-->
+    </properties>
+  </persistence-unit>
+</persistence>
